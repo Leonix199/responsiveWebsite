@@ -2,7 +2,7 @@
 
 :root{
   --primary-color: #047aed;
-  --secondary-color: #1c3f88;
+  --secondary-color: #1c3fa8;
   --dark-color: #002240;
   --light-color: #f4f4f4;
   --success-color: #5cb85c;
@@ -26,7 +26,7 @@ ul{
 }
 
 a{
-  text-decoration: n;
+  text-decoration: none;
   color: #333;
 }
 
@@ -50,6 +50,11 @@ code, pre{
   padding: 10px;
 }
 
+.hidden{
+  visibility: hidden;
+  height: 0;
+}
+
 /* Navbar Styling */
 .navbar{
   background-color: var(--primary-color);
@@ -66,9 +71,6 @@ code, pre{
 }
 .navbar a:hover{
   border-bottom: 2px #fff solid;
-}
-.text-center{
-  text-align: center;
 }
 .navbar .flex{
   justify-content: space-between;
@@ -89,7 +91,7 @@ code, pre{
 }
 .showcase .grid{
   overflow: visible;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 55% auto;
   gap: 30px;
 }
 .showcase-text{
@@ -103,6 +105,7 @@ code, pre{
   width: 400px;
   padding: 40px;
   z-index: 100;
+  justify-self: flex-end;
   animation: slideInFromRight 1s ease-in;  
 }
 
@@ -110,11 +113,11 @@ code, pre{
   margin: 30px 0;
 }
 
-.showcase-form input[type='text'],.showcase-form input[type='email']{
+.showcase-form input[type='text'], .showcase-form input[type='email']{
   border: 0;
   border-bottom: 1px solid #b4becb;
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   font-size: 16px;
 }
 .showcase-form input:focus{
@@ -212,14 +215,14 @@ code, pre{
 
 /* Docs */
 .docs-main h3{
-  margin: 20px;
+  margin: 20px 0;
 }
 .docs-main .grid{
   grid-template-columns: 1fr 2fr;
   align-items: flex-start;
 }
 .docs-main nav li{
-  font-size: 17ps;
+  font-size: 17px;
   padding: 5px;
   margin-bottom: 5px;
   border-bottom: 1px #ccc solid;
@@ -255,7 +258,7 @@ code, pre{
     transform: translateY(-100%);
   }
   100%{
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 @keyframes slideInFromBottom{
@@ -263,7 +266,7 @@ code, pre{
     transform: translateY(100%);
   }
   100%{
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
@@ -311,5 +314,8 @@ code, pre{
   .navbar ul{
     padding: 10px;
     background-color: rgba(0,0,0,0.1);
+  }
+  .showcase-form{
+    width: 300px;
   }
 }
